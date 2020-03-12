@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/makeblog" method="POST">
+      <input type="text" name="title" placeholder="title" />
+      <textarea name="body" cols="30" rows="10"></textarea>
+      <select name="authorid" id="">
+        <% authors.forEach(author => { %>
+        <option value="<%=author.id %>"><%=author.name%></option>
+        <% }) %>
+      </select>
+      <select name="categoryid" id="">
+        <% categories.forEach(category => { %>
+        <option value="<%=category.id %>"><%=category.name%></option>
+        <% }) %>
+      </select>
+      <input type="todaysdate" name="date" placeholder="YYYY-MM-DD" />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
